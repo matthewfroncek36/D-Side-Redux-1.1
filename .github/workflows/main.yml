@@ -47,7 +47,7 @@ jobs:
           haxelib run hxpkg install
           git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
-        run: haxelib run lime rebuild cpp -D HXCPP_CXX_STANDARD=20
+        run: haxelib run lime rebuild cpp
       - name: Compile
         run: haxelib run lime build Project.xml linux -D ${{ inputs.buildFlags }}
       - name: Publish Artifact
@@ -74,7 +74,7 @@ jobs:
           haxelib run hxpkg install
           git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
-        run: haxelib run lime rebuild cpp -D HXCPP_CXX_STANDARD=20
+        run: haxelib run lime rebuild cpp
       - name: Compile
         run: haxelib run lime build windows -D ${{ inputs.buildFlags }}
       - name: Publish Artifact
@@ -101,7 +101,7 @@ jobs:
           haxelib run hxpkg install
           git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
-        run: haxelib run lime rebuild cpp -D HXCPP_CXX_STANDARD=20
+        run: haxelib run lime rebuild cpp
       - name: Compile
         run: |
           haxelib run lime build mac -64 -D ${{ inputs.buildFlags || 'commit' }} -D HXCPP_M64
@@ -130,7 +130,7 @@ jobs:
           haxelib run hxpkg install
           git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
-        run: haxelib run lime rebuild cpp -D HXCPP_CXX_STANDARD=20
+        run: haxelib run lime rebuild cpp
       - name: Compile
         run: |
           haxelib run lime build mac -arm64 -D ${{ inputs.buildFlags }} -D HXCPP_ARM64

@@ -35,8 +35,8 @@
             },
             {
                 "name": "hxcpp",
-                "link": "https://github.com/HaxeFoundation/hxcpp",
-                "branch": "8268ef2d518b1e7c8e8494114d0bdf6b5bc4147d"
+                "link": "https://github.com/FunkinCrew/hxcpp",
+                "branch": "bfe01edc20cdc54fe7f54f1f2124b8959646144c"
             },
             {
                 "name": "hxvlc",
