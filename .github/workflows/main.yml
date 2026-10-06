@@ -68,6 +68,8 @@ jobs:
           haxelib install hxcpp > nul
           haxelib install hxpkg
           haxelib run hxpkg install
+      - name: Build Lime native library
+        run: haxelib run lime rebuild cpp
       - name: Compile
         run: haxelib run lime build windows -D ${{ inputs.buildFlags }}
       - name: Publish Artifact

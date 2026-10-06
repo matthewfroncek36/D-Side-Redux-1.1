@@ -46,7 +46,11 @@ In a cmd within the project directory, in order run...
 
 > haxelib run hxpkg install
 
-After that is complete, run `lime test windows` and you should be compiling
+The project uses a Git version of Lime, which does not include the prebuilt native library. Build it once after installing dependencies:
+
+> haxelib run lime rebuild cpp
+
+After that is complete, run `lime test windows` and you should be compiling.
 
 ## Build targets
 
