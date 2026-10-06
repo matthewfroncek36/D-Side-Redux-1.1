@@ -36,6 +36,8 @@ jobs:
          haxelib install hxpkg --global
          haxelib run hxpkg setup --global
          haxelib run hxpkg install
+      - name: Build Lime native library
+        run: haxelib run lime rebuild cpp
       - name: Configure Android
         run: |
           haxelib run lime setup android
