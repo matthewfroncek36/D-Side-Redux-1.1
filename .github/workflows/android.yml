@@ -18,6 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Lime build dependencies
+        run: sudo apt-get update && sudo apt-get install -y libwayland-bin wayland-protocols
+
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
         with:
@@ -36,6 +39,7 @@ jobs:
          haxelib install hxpkg --global
          haxelib run hxpkg setup --global
          haxelib run hxpkg install
+         git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
         run: haxelib run lime rebuild cpp
       - name: Configure Android

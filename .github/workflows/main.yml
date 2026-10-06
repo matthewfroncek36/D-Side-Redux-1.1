@@ -38,12 +38,14 @@ jobs:
       - name: install libvlc
         run: |
             sudo apt-get install vlc libvlc-dev libvlccore-dev vlc-bin
+            sudo apt-get install -y libwayland-bin wayland-protocols
       - name: Install libraries
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
           haxelib install hxpkg
           haxelib run hxpkg install
+          git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
         run: haxelib run lime rebuild cpp
       - name: Compile
@@ -70,6 +72,7 @@ jobs:
           haxelib install hxcpp > nul
           haxelib install hxpkg
           haxelib run hxpkg install
+          git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
         run: haxelib run lime rebuild cpp
       - name: Compile
@@ -96,6 +99,7 @@ jobs:
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hxpkg
           haxelib run hxpkg install
+          git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
         run: haxelib run lime rebuild cpp
       - name: Compile
@@ -124,6 +128,7 @@ jobs:
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hxpkg
           haxelib run hxpkg install
+          git -C .haxelib/lime/git submodule update --init --recursive
       - name: Build Lime native library
         run: haxelib run lime rebuild cpp
       - name: Compile
