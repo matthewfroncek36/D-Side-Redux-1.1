@@ -48,7 +48,7 @@ In a cmd within the project directory, in order run...
 
 The project uses a Git version of Lime, which does not include the prebuilt native library. Build it once after installing dependencies:
 
-> haxelib run lime rebuild cpp
+> haxelib run lime rebuild cpp -D HXCPP_CXX_STANDARD=20
 
 After that is complete, run `lime test windows` and you should be compiling.
 
