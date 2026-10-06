@@ -99,6 +99,9 @@ class GameOverSubstate extends MusicBeatSubstate
 			FlxG.camera.follow(camFollow, LOCKON, 0);
 		}
 		
+		addVirtualPad(NONE, A_B);
+    	addVirtualPadCamera();
+		
 		super.create();
 		
 		PlayState.instance?.scripts.call('onGameOverPost', []);

@@ -407,12 +407,7 @@ class FunkinAssets
 		
 		Logger.log('sound ($key) was not found. Returning beep instead');
 		
-		var beepPath:String = 'flixel/sounds/beep';
-		var beepSound:Sound = FlxAssets.getSound(beepPath);
-		if (beepSound != null) return beepSound;
-		
-		// Fallback: return empty sound if beep not found
-		return new Sound();
+		return FlxAssets.getSoundAddExtension('flixel/sounds/beep');
 	}
 	
 	/**
